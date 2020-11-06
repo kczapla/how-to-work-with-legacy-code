@@ -1,5 +1,11 @@
 = breaking dependencies
 
+== pull up an interface
+
+== implement fake class (mock)
+
+== preserve signatures
+
 == wrapper class (decorator)
 
 === class diagram
