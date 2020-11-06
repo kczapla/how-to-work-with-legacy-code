@@ -1,0 +1,96 @@
+= how to work with legacy code
+
+== introduction
+
+== credits
+
+image::https://img-cloud.megaksiazki.pl/5153482-original/10377054365788769f3f54d6a4fb151a/working-effectively-with-legacy-code.jpg[Working effectively with legacy code front cover]
+
+== four reasons to change a software
+
+* adding feature
+* fixing a bug
+* improve the design
+* optimizing resource usage
+
+=== behavior
+
+* users depend on it
+
+=== what changes when software is changed
+
+|===
+| |adding feature |fixing a bug |improve the design |optimizing resource usage
+|structure |changes |changes |changes |-
+|new functionality |changes |- |- |-
+|functionality |- |changes |- |-
+|resource usage |- |- |- |changes
+|===
+
+=== preserve behaviour
+
+* with introducing behaviour change, much more has to be preserved
+
+=== when doing software change two things has to be in mind
+
+* make sure that change is correct
+* preserve behaviour of the rest
+
+=== why preservation is challenging and risky
+
+* it is not known how much of behaviour is at risk when doing change
+* the amount of behaviour to preserve is large
+
+=== how to mitigate the risk
+
+* what changes has to be make?
+* how do I know that they are done correctly?
+* how do I know that they didn't break anything?
+
+== two ways of making a change
+
+* "`edit and pray`"
+* "`cover and modify`"
+
+== legacy code
+
+=== what is it?
+
+* it is code without tests
+
+=== why is it hard to change?
+
+* codebase is large
+* no way of knowing if changes are done correctly
+* no way of knowing if changes didn't break anything
+* it is hard to write unit tests
+
+=== why is it hard to write unit tests
+
+* classes have dependencies on external data sources, file system etc.
+
+== michael feathers legacy code chaning algorithm
+
+* identify change points
+* find test points
+* break dependencies
+* write tests
+* make changes and refactor
+
+=== identify change points
+
+place in the software where change has to be made
+
+=== find test points
+
+what classes/functions has to be tested
+
+=== break dependencies
+
+remove dependencies and enable tests
+
+=== write tests
+
+write tests that gives immediate feedback about changes impact
+
+=== make changes and refactor

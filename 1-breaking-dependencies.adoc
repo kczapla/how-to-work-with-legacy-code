@@ -1,0 +1,11 @@
+= breaking dependencies
+
+== wrapper class (decorator)
+
+=== class diagram
+
+image::https://upload.wikimedia.org/wikipedia/commons/e/e9/Decorator_UML_class_diagram.svg[decorator uml class diagram]
+
+=== class and sequence diagram
+
+image::https://upload.wikimedia.org/wikipedia/commons/8/83/W3sDesign_Decorator_Design_Pattern_UML.jpg[decorator class and sequence diagram]
