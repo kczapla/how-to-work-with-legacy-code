@@ -15,3 +15,57 @@ image::https://upload.wikimedia.org/wikipedia/commons/e/e9/Decorator_UML_class_d
 === class and sequence diagram
 
 image::https://upload.wikimedia.org/wikipedia/commons/8/83/W3sDesign_Decorator_Design_Pattern_UML.jpg[decorator class and sequence diagram]
+
+== parametrize constructor
+
+=== starting point
+
+[source,c++]
+----
+class Device {
+public:
+    Device(std::size_t size) {
+        m_data = load_data_from_external_source(size);
+    }
+
+private:
+    char* m_data;
+};
+----
+
+
+=== parametrize ctor
+
+[source,c++]
+----
+class Device {
+public:
+    Device(std::size_t size) {
+        m_data = load_data_from_external_source(size);
+    }
+
+    Device(char* data) : m_data{data} {}
+
+private:
+    char* m_data{nullptr};
+};
+----
+
+=== preserve signature
+
+[source,c++]
+----
+class Device {
+public:
+    Device(std::size_t size) : Device{load_data_from_external_source(size)} {}
+    Device(char* data) : m_data{data} {}
+
+private:
+    char* m_data{nullptr};
+};
+----
+
+=== result
+
+* Device can be defined in test harness
+* No changes on user side because old ctor signature is preserved
