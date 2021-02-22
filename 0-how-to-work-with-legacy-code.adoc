@@ -69,7 +69,7 @@ image::https://img-cloud.megaksiazki.pl/5153482-original/10377054365788769f3f54d
 
 * classes have dependencies on external data sources, file system etc.
 
-== michael feathers legacy code chaning algorithm
+== michael feathers legacy code changing algorithm
 
 * identify change points
 * find test points
